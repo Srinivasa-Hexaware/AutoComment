@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoComment</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="static/images/favicon.png" class="logo" alt="..." width="70" height="60">
+        <h1>AutoComment</h1>
+        <div class="user-info"> 
+            <div class="user-icon">S</div>
+            <div class="user-info-box">
+                <p><strong>User:</strong> Srinivasa C V</p>
+                <p><strong>Email:</strong> srini@gmail.com</p>
+                <a href="#" id="logout-link">Logout</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <aside id="sidebar">
+            <h2>AutoComment</h2>
+            <div class="divider"></div> <!-- Divider line -->
+            <button id="toggle-sidebar">⟪</button> <!-- Left arrow icon when opened -->
+            <h4 id="chats">Chat History</h4>
+            <button id="new-chat">New Chat<i class="fas fa-edit"></i></button>
+            <div id="chat-list">
+                <!-- Chat items will be dynamically populated here -->
+            </div>
+        </aside>
+            <main>
+                <div id="search-bar-wrapper">
+                    <input type="text" id="search-bar" placeholder="Search...">
+                </div>
+                <div id="chat-content">
+                    <!-- Chat content will be dynamically populated here -->
+                </div>
+                <button id="scroll-to-bottom" class="scroll-to-bottom">🡣</button>
+                <div id="prompt-area">
+                    <textarea type="text" id="prompt-input" placeholder="Enter your code to get comments..." rows="2"></textarea>
+                    <button id="send-prompt"></button>
+                </div>
+                <p>User can just provide the code snippet and submit for the comments and explanation, not mandatory to prompt for it.</p>
+                <div class="info-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+            </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

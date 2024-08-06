@@ -1,0 +1,436 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #d5e4d6;
+}
+
+header {
+    background-color: #72d3da;
+    color: white;
+    padding: 1rem;
+    height: 35px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 2px;
+}
+
+.user-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 72%;
+}
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #007BFF; /* Professional blue background */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Makes the div circular */
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold; /* Makes the letter bold */
+}
+
+.user-info span {
+    margin-left: 10px;
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.user-info-box {
+    display: none; /* Hide by default */
+    position: absolute; /* Position relative to the user icon */
+    top: 50px; /* Adjust position as needed */
+    right: -25px; /* Align to the right edge */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 200px; /* Set a fixed width */
+    text-align: center;
+}
+
+#logout-link {
+    display: block;
+    width: 96%;
+    padding: 5px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    margin-top: 5px;
+}
+
+.user-info-box p {
+    margin: 0 0 5px; /* Margin between paragraphs */
+    font-size: 14px; /* Adjust font size as needed */
+    color: black; /* Ensure text color is visible */
+}
+
+/* Change background color on hover */
+#logout-link:hover {
+    background-color: #0056b3;
+}
+
+/* Show the info box when hovering over the user icon */
+.user-info:hover .user-info-box {
+    display: block;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+aside {
+    width: 180px;
+    background-color: #dfdddd;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+    position: relative; /* Change to relative */
+    transition: width 0.3s ease;
+    /*overflow: auto; /*Allow scrolling if content overflows */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center child elements horizontally */
+}
+
+aside h2 {
+    transition: opacity 0.3s ease;
+    margin-top: -1px;
+    justify-content: center;
+    margin-bottom: 6px;
+    overflow: none;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: #b6b5b5;
+    margin: 1rem 0;
+}
+
+#chats {
+    display: block;
+    width: 90%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    background-color: #5c5b5b;
+    color: white;
+    border: none;
+    text-align: center;
+}
+
+#new-chat {
+    margin-top: 10px;
+    border: none;
+    background: none;
+    font-size: large;
+    cursor: pointer;
+}
+
+#new-chat i {
+    margin-left: 8px; /* Space between icon and text */
+    font-size: 24px; /* Adjust icon size as needed */
+}
+
+#chat-list {
+    list-style-type: none;
+    width: 90%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: medium;
+    white-space: nowrap; /* Ensure single line display */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+    scrollbar-width: thin; /* Thin scrollbar */
+    scroll-snap-align: start;
+}
+
+#chat-list li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#chat-list li a:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+#chat-list li a.active {
+    background-color: #f0f8ff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#toggle-sidebar {
+    position: absolute;
+    top: 5px; /* Adjust as needed */
+    right: -30px; /* Adjust to align with the sidebar */
+    z-index: 1000;
+    border: none;
+    background: none;
+    width: 40px; /* Increase width */
+    height: 40px; /* Increase height */
+    font-size: 30px; /* Increase font size */
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-left: 30px; /* Adjust margin-left */
+    margin-right: -30px;
+    transition: margin-left 0.3s ease; /* Smooth transition */
+}
+
+#search-bar-wrapper {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    width: 80%; /* Ensure it takes full width of the container */
+    margin-bottom: 4px; /* Space below the search bar */
+    margin-top: -8px;
+}
+
+#search-bar {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    margin-right: -50px;
+    width: 80%;
+    box-sizing: border-box;
+    border: 1px solid #777676;
+    border-radius: 20px; /* Adjust the value for the curve effect */
+    outline: none; /* Remove default outline */
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+#search-bar:focus {
+    border-color: #7ddbe2; /* Change border color when focused */
+    box-shadow: 0 0 1px 3px rgba(149, 235, 241, 0.5); /* Add a subtle shadow on focus */
+}
+
+mark {
+    background-color: yellow;
+    color: black;
+}
+
+#chat-content {
+    width: 90%;
+    flex: 1;
+    border: none;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: thin; /* Thin scrollbar */
+    scroll-snap-align: end; 
+    scrollbar-gutter: 30px; /* Space between scrollbar and content */
+}
+
+.scroll-to-bottom {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block; /* Make sure the button is visible */
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    visibility: hidden; /* Initially hidden */
+}
+
+.scroll-to-bottom.show {
+    visibility: visible; /* Show when necessary */
+}
+
+/* Styling for the prompt area */
+#prompt-area {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    width: 80%;
+    margin: 0 auto; /* Center horizontally */
+    position: relative; /* Establish a containing block for absolute positioning */
+    margin-right: 150px;
+    margin-bottom: 15px;
+    height: 45px; /* Adjust height as needed */
+}
+
+/* Styling for the prompt input */
+#prompt-input {
+    flex: 1;
+    padding: 10px 35px; /* Add padding to adjust text position */
+    padding-left: 1.5rem;
+    padding-right: 3rem;
+    border: 1px solid #797878;
+    border-radius: 30px; /* Curved edges */
+    resize: none; /* Prevent resizing */
+    overflow-y: auto; /* Add scrollbar if needed */
+    /*min-height: 10px; /* Minimum height to start */
+    height: 45px;
+    max-height: 100px; /* Height for about 5 lines of text */
+    box-sizing: border-box;
+    outline: none; /* Remove default outline */
+    font-size: 16px; /* Adjust font size as needed */
+    line-height: 1; /* Adjust line-height to center the text vertically */
+}
+
+#prompt-input:focus {
+    border-color: #cf6ef5; /* Change border color when focused */
+    box-shadow: 1px 1px 1px 4px rgba(245, 125, 245, 0.5); /* Add a subtle shadow on focus */
+}
+
+/* Styling for the send button */
+#send-prompt {
+    position: absolute; /* Position relative to the prompt area */
+    right: 10px; /* Position at the right edge of the prompt area */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    width: 38px; /* Adjust size as needed */
+    height: 38px; /* Adjust size as needed */
+    background-color: #0475ee; /* Background color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 50%; /* Makes it circular */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 25px; /* Arrow size */
+    line-height: 0; /* Remove extra space around text */
+}
+
+#send-prompt:hover {
+    background-color: #67acf7; /* Darker background on hover */
+}
+
+#send-prompt::before {
+    content: '⇧'; /* Unicode arrow character */
+}
+
+/* Disabled state for the send button */
+#send-prompt:disabled {
+    background-color: #636161; /* Gray background when disabled */
+    cursor: not-allowed; /* Not-allowed cursor when disabled */
+    opacity: 0.5; /* Make the button semi-transparent when disabled */
+}
+
+
+.info-icon {
+    position: fixed; /* Fixes the icon in the viewport */
+    bottom: 20px; /* Position at the bottom of the viewport */
+    right: 10px; /* Position at the right of the viewport */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    background-color: #007BFF; /* Background color */
+    color: white; /* Icon color */
+    border-radius: 50%; /* Makes it circular */
+    font-size: 18px; /* Adjust icon size as needed */
+    cursor: pointer; /* Pointer cursor on hover */
+    user-select: none; /* Prevent text selection */
+    text-align: center; /* Center text */
+    line-height: 30px; /* Center text vertically */
+}
+
+.info-icon i {
+    margin: 0; /* Remove default margin */
+}
+
+.message {
+    margin-bottom: 12px;
+    max-width: 80%; /* Adjusted for a more balanced look */
+    padding: 12px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-bottom: 20px; /* Add space for the timestamp */
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    word-wrap: break-word; /* Break long words */
+    font-size: 14px; /* Slightly larger text */
+    line-height: 1.5; /* Better line spacing */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean and modern font */
+    display: inline-block;  /* Ensure the message width adapts to content */
+    padding-right: 80px;  /* Add padding to the right to make room for the timestamp */
+    box-sizing: border-box;  /* Ensure padding is included in the width calculation */
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #d0f0fd;
+    color: #333;
+    margin-left: auto;
+    margin-right: 0;
+    border: 1px solid #b0e2f0;
+    background-image: url('/static/images/user-icon.png'); /* Add your image path here */
+    background-size: 25px; /* Adjust image size */
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding-left: 40px; /* Add padding to prevent text overlap with the image */
+}
+
+.model-message {
+    align-self: flex-start;
+    background-color: #f0f9e1;
+    color: #333;
+    margin-left: 0;
+    margin-right: auto;
+    border: 1px solid #d0e8a5;
+    background-image: url('/static/images/favicon-32x32.png'); /* Add your image path here */
+    background-size: 28px; /* Adjust image size */
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding-left: 40px; /* Add padding to prevent text overlap with the image */
+}
+
+.loading-message {
+    font-style: italic;
+    color: gray;
+    margin-top: 10px;
+}
+
+.message-timestamp {
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+    font-size: 0.8em;
+    color: #888;
+}
+
+p {
+    margin: 0; /* Remove default margin */
+    font-size: smaller;
+    /* margin-left: 60px; */
+    text-align: center;
+}
