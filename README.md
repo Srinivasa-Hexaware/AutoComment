@@ -1,4 +1,6 @@
 # AutoComment: AI-Powered Code Comment Generator
+![image](https://github.com/user-attachments/assets/2b1cc8d7-311d-44a8-9d2f-b2d65bd5039d)
+
 
 ## Project Overview
 AutoComment is a web-based application that uses AI to generate descriptive and informative comments for code snippets. The AI can handle multiple programming languages and provides accurate comments to enhance code readability and maintainability.
