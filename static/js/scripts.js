@@ -274,6 +274,7 @@ function submitPrompt(promptInput, sendPromptButton) {
         .then(data => {
             // Remove loading message
             removeLoadingMessage();
+            
             addMessage(data.comment, 'model-message'); // Display the model's response
 
             // Save the chat after receiving the response
