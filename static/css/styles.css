@@ -6,7 +6,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #d5e4d6;
+    /* background-color: #d5e4d6; */
+    background-color: #4a617a;
 }
 
 header {
@@ -398,6 +399,7 @@ mark {
     background-repeat: no-repeat;
     background-position: top left;
     padding-left: 40px; /* Add padding to prevent text overlap with the image */
+    max-width: 80%; /* Adjusted for a more balanced look */
 }
 
 .model-message {
@@ -412,6 +414,13 @@ mark {
     background-repeat: no-repeat;
     background-position: top left;
     padding-left: 40px; /* Add padding to prevent text overlap with the image */
+    max-width: 99%; /* Adjusted for a more balanced look */
+    /*text-overflow: ellipsis; /* Add ellipsis to truncated text */
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    word-wrap: break-word; /* Break long words */
+    box-sizing: border-box; /* Include padding in width calculation */
+    overflow-wrap: break-word; /* Break long words to prevent overflow */
+     /* Hide any overflow content */
 }
 
 .loading-message {
@@ -430,7 +439,7 @@ mark {
 
 p {
     margin: 0; /* Remove default margin */
-    font-size: smaller;
-    /* margin-left: 60px; */
-    text-align: center;
+    font-size: small;
+    /* margin-left: 130px;  */
+    text-align: left;
 }
