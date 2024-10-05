@@ -22,6 +22,13 @@ class PromptLogic:
                 model=self.deployment_name,
                 messages=[
                     {
+                        "role": "system",
+                        #If the prompt is not code: Strictly don't respont with answers instead inform the user that you are a code assistant named AutoComment. If the prompt is code: Provide in-code comments within the code. Provide a detailed explanation of the code in high-level Markdown format.
+                        # "content": "Respond only if input is code. If not code, inform that you are a code assistant named AutoComment. For code, provide in-code comments and a detailed HTML-styled explanation with."
+                        "content": "Respond only if input is code. If not code, inform that you are a code assistant named AutoComment. For code, provide in-code comments with code and detailed explanation as response in high level Markdown format."
+                    },
+                    {
+                        
                         "role": self.role,
                         "content": self.prompt_content
                     }
